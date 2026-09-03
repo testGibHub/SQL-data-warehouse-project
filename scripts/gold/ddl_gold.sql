@@ -14,9 +14,9 @@
   */
 
 
-===============================================================================
-Create Dimension Table : gold.dim_customers
-===============================================================================
+--===============================================================================
+--Create Dimension Table : gold.dim_customers
+--===============================================================================
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
 DROP VIEW gold.dim_customers;
 GO
@@ -43,9 +43,9 @@ LEFT JOIN silver.erp_loc_a101 AS la
     ON ci.cst_key = la.cid;
 GO
 
-=============================================================================
-Create Dimension Table : gold.dim_products
-=============================================================================
+--=============================================================================
+--Create Dimension Table : gold.dim_products
+--=============================================================================
 IF OBJECT_ID('gold.dim_products', 'V') IS NOT NULL
 DROP VIEW gold.dim_products;
 GO
@@ -69,9 +69,9 @@ SELECT
 	WHERE prd_end_dt IS NULL--Filter out all historical data
 GO
 
-==========================================================================
-Create Fact Table : gold.fact_sales
-==========================================================================
+--==========================================================================
+--Create Fact Table : gold.fact_sales
+--==========================================================================
 
 IF OBJECT_ID('gold.fact_sales', 'V') IS NOT NULL
 DROP VIEW gold.fact_sales;
